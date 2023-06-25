@@ -1,0 +1,16 @@
+<div class="tickets-search-result">
+  <div *ngIf="isLoading(); else items;">
+    Loading...
+  </div>
+  <!-- <app-loader *ngIf="isLoading(); else items;" /> -->
+  <ng-template #items>
+    <div *ngFor="let ticket of tickets(); trackBy: trackBy">
+      <app-ticket-card [ticket]="ticket">
+        <span
+          class="tickets-search-result__icon"
+          icon
+        >Add</span>
+      </app-ticket-card>
+    </div>
+  </ng-template>
+</div>

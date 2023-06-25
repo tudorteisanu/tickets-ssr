@@ -1,0 +1,12 @@
+.tickets-search-result {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+
+  &__icon {
+    border-radius: 5px;
+    padding: 3px 15px;
+    background-color: $accent-color;
+  }
+}

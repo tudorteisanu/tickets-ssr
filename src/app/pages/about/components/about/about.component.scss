@@ -1,0 +1,44 @@
+@import "src/assets/scss/variables";
+
+.about-row {
+  display: flex;
+  align-items: center;
+  max-width: $screen-lg;
+  margin: 0 auto;
+
+  &:not(:first-child) {
+    margin-top: 100px;
+    gap: 100px;
+  }
+
+  &:last-child {
+    margin-bottom: 100px;
+  }
+
+  p {
+    color: $secondary-light-color;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 34.5px;
+
+    strong {
+      color: $primary-color;
+    }
+  }
+}
+
+.route {
+  flex-direction: column;
+  gap: 50px;
+
+  &__title {
+    color: $primary-color;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+
+    span {
+      color: $accent-color;
+    }
+  }
+}
