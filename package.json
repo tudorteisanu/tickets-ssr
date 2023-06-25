@@ -10,6 +10,7 @@
     "ng": "ng",
     "start": "yarn dev",
     "build": "ng build",
+    "build:firebase": "BUILD_PRESET=firebase npm run build",
     "watch": "ng build --watch",
     "test": "ng test"
   },
