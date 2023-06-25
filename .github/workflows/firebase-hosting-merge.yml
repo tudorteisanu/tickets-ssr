@@ -35,4 +35,4 @@ jobs:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_TICKETS_SSR }}"
           channelId: live
-          projectId: tickets-nanoit
+          projectId: tickets-ssr
