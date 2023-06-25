@@ -17,7 +17,11 @@ export default defineConfig(({ mode }) => ({
       '@': resolve(__dirname, './src/app',),
     },
   },
-  plugins: [analog(), angular({
+  plugins: [analog({
+    vite: {
+      jit: true
+    }
+  }), angular({
     inlineStylesExtension: 'scss',
   }),],
   test: {

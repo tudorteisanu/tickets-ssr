@@ -1,5 +1,4 @@
-import { Component, OnInit, Signal, signal } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Component, OnInit, Signal } from '@angular/core';
 import { AccordionItemComponent } from '../accordion-item/accordion-item.component';
 import { FaqInterface } from '../../types/faq.interface';
 import { NgForOf, NgIf } from '@angular/common';
@@ -9,12 +8,12 @@ import { BackendErrorInterface } from '@/shared/types/backend-error.interface';
 import { ErrorMessageComponent } from "../../../../shared/components/error-message/error-message.component";
 
 @Component({
-    selector: 'app-faq',
-    templateUrl: './faq.component.html',
-    styleUrls: ['./faq.component.scss'],
-    standalone: true,
-    providers: [provideComponentStore(FaqStore)],
-    imports: [AccordionItemComponent, NgIf, NgForOf, ErrorMessageComponent]
+  selector: 'app-faq',
+  templateUrl: './faq.component.html',
+  styleUrls: ['./faq.component.scss'],
+  standalone: true,
+  providers: [provideComponentStore(FaqStore)],
+  imports: [AccordionItemComponent, NgIf, NgForOf, ErrorMessageComponent]
 })
 export class FaqComponent implements OnInit {
   faqs: Signal<FaqInterface[]> = this.faqStore.dataSelector;

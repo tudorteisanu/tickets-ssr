@@ -2,7 +2,8 @@ import 'zone.js/node';
 import { enableProdMode } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { renderApplication } from '@angular/platform-server';
-import "@angular/compiler";
+import '@angular/compiler';
+
 import { config } from './app/app.config.server';
 import { AppComponent } from './app/app.component';
 
