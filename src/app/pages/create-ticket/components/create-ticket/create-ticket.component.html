@@ -1,0 +1,71 @@
+<section class="create-ticket">
+    <div class="create-ticket__container">
+        <h1 class="create-ticket__title">
+            <span>
+                Create a ticket
+            </span>
+        </h1>
+        <div *ngIf="error()">
+            <app-error-message [error]="error()" />
+        </div>
+        <form
+            class="form-textarea__form"
+            [formGroup]="createTicketForm"
+            (ngSubmit)="submit()"
+        >
+            <div class="create-ticket__form--row">
+                <p class="create-ticket__subtitle">
+                    Type and date
+                </p>
+                <div class="create-ticket__form--duration">
+                    <app-form-input
+                        label="Ticket type"
+                        formControlName="type"
+                    ></app-form-input>
+                    <app-form-input
+                        label="Ticket date"
+                        formControlName="date"
+                    ></app-form-input>
+                </div>
+            </div>
+            <div class="create-ticket__form--row">
+                <p class="create-ticket__subtitle">
+                    Event duration
+                </p>
+                <div class="create-ticket__form--duration">
+                    <app-form-input
+                        label="00:00"
+                        formControlName="startTime"
+                    ></app-form-input>
+                    <app-form-input
+                        label="00:00"
+                        formControlName="endTime"
+                    ></app-form-input>
+                </div>
+            </div>
+            <div class="create-ticket__form--row">
+                <p class="create-ticket__subtitle">
+                    Event title
+                </p>
+                <app-form-input
+                    label="Title"
+                    formControlName="title"
+                ></app-form-input>
+            </div>
+            <div class="create-ticket__form--row">
+                <p class="create-ticket__subtitle">
+                    Event description
+                </p>
+                <app-form-textarea
+                    formControlName="description"
+                    [rows]="4"
+                />
+            </div>
+            <app-submit-button [loading]="isSubmitting()">
+                <span>
+                    Create ticket
+                </span>
+            </app-submit-button>
+        </form>
+    </div>
+</section>

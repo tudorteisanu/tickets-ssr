@@ -1,0 +1,49 @@
+<section class="contact">
+  <div class="contact__container">
+    <div *ngIf="errorMessage()">
+      <div class="contact__error-message">
+        {{errorMessage()?.message}}
+      </div>
+    </div>
+    <h1 class="contact__title">
+      <span>
+        Got anything for us? Leave a <span class="contact__title--message">message!</span>
+      </span>
+    </h1>
+    <p class="contact__subtitle">
+      Or contact us via Instagram, Linkedin or Customer Support.
+    </p>
+    <form
+      class="contact__form"
+      [formGroup]="contactsForm"
+      (ngSubmit)="submit()"
+    >
+      <div class="contact__form--inputs">
+        <app-form-input
+          label="Full name"
+          formControlName="fullname"
+        ></app-form-input>
+        <app-form-input
+          label="Email address"
+          formControlName="email"
+        ></app-form-input>
+      </div>
+      <app-form-textarea
+        formControlName="description"
+        [rows]="4"
+      />
+      <app-submit-button
+        [loading]="isSubmitting()"
+        class="contact__form--submit"
+      >
+        <span>
+          Send Message
+        </span>
+        <img
+          src="/icons/arrow-left.svg"
+          alt=""
+        >
+      </app-submit-button>
+    </form>
+  </div>
+</section>

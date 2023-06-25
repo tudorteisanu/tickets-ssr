@@ -1,0 +1,11 @@
+<button
+    class="submit-btn"
+    type="submit"
+>
+    <ng-template #loadingRef>
+        <app-loader />
+    </ng-template>
+    <ng-container *ngIf="!loading; else loadingRef;">
+        <ng-content></ng-content>
+    </ng-container>
+</button>

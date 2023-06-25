@@ -1,0 +1,16 @@
+.auth-buttons {
+  display: flex;
+  align-items: center;
+
+  li {
+    cursor: pointer;
+    font-size: 18px;
+  }
+
+  &__login {
+    margin-left: 30px;
+    border: 1px solid $primary-color;
+    border-radius: 10px;
+    padding: 10px 25px;
+  }
+}

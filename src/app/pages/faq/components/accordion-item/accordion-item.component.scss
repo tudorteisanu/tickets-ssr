@@ -1,0 +1,30 @@
+.accordion-item {
+
+  &--heading {
+    display: flex;
+    padding: 20px 15px;
+    border-top: 1px solid $border-color;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &--content {
+    padding: 15px;
+    color: $secondary-light-color;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 30px;
+  }
+
+  .rotate-chevron {
+    transform: rotate(180deg);
+  }
+
+  .accordion-item__white {
+    background-color: $foreground-color;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
+  }
+}

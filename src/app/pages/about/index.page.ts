@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import {AboutComponent} from "@/pages/about/components/about/about.component";
+import {AboutComponent} from "./components/about/about.component";
 
 @Component({
-  selector: 'app-home',
+  selector: 'about-page',
   standalone: true,
   imports: [AboutComponent],
   template: `

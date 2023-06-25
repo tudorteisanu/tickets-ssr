@@ -1,0 +1,35 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+  padding: 30px 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $foreground-color;
+  z-index: 100;
+
+  &__logo {
+    color: $accent-color;
+    cursor: pointer;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $primary-color;
+    gap: 60px;
+
+    li {
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    &--active {
+      font-weight: bold;
+    }
+  }
+}

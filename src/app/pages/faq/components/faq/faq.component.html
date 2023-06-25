@@ -1,0 +1,20 @@
+<section class="faq">
+  <h1 class="faq__title">Frequently Asked Questions</h1>
+  <h3 class="faq__subtitle">Got another question for us? <span>Contact us</span> via email!</h3>
+  <div class="faq__info">
+    <div *ngIf="isLoading()">
+      Loading...
+    </div>
+    <app-error-message
+      [error]="error()"
+      *ngIf="error()"
+    />
+  </div>
+  <div class="accordion">
+    <app-accordion-item
+      *ngFor="let item of faqs(); trackBy: trackByIndex"
+      [content]="item.answer"
+      [title]="item.question"
+    />
+  </div>
+</section>

@@ -1,0 +1,9 @@
+<section>
+  <app-tickets-heading />
+  <app-tickets-search />
+  <app-error-message
+    [error]="error()"
+    *ngIf="error()"
+  />
+  <app-tickets-search-result />
+</section>

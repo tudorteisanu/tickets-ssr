@@ -1,0 +1,27 @@
+<div class="form-textarea">
+  <div class="form-textarea__container">
+    <div class="form-textarea__wrapper">
+      <textarea
+        #formInput
+        [rows]="rows"
+        [placeholder]="label"
+        [value]="value"
+        (input)="onChange(formInput.value)"
+        (focus)="onTouched()"
+      ></textarea>
+    </div>
+    <div *ngIf="icon">
+      <img
+        alt=""
+        width="24"
+        height="24"
+        [ngSrc]="iconUrl"
+      >
+    </div>
+  </div>
+  <div class="form-textarea__error">
+    <div [hidden]="!areMessageShown">
+      {{errorMessage}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="accordion-item">
+  <div
+    class="accordion-item--heading"
+    [ngClass]="headingClass()"
+    (click)="toggle()"
+  >
+    <span>
+      {{title}}
+    </span>
+    <img
+      ngSrc="/icons/chevron-down.png"
+      width="13"
+      height="11"
+      alt=""
+      [ngClass]="iconClass()"
+    >
+  </div>
+  <div
+    *ngIf="expanded()"
+    class="accordion-item--content"
+  >
+    {{content}}
+  </div>
+</div>

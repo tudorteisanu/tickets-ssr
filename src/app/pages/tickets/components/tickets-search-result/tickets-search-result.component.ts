@@ -1,5 +1,5 @@
 
-import { TicketInterface } from '../../../../shared/types/ticket.interface';
+import { TicketInterface } from '@/shared/types/ticket.interface';
 import { Component, Signal, inject } from '@angular/core';
 import { TicketCardComponent } from '../ticket-card/ticket-card.component';
 import { NgForOf, NgIf } from '@angular/common';
@@ -13,9 +13,10 @@ import { TicketsStore } from '../../store/tickets.store';
   imports: [TicketCardComponent, NgIf, NgForOf]
 })
 export class TicketsSearchResultComponent {
-  private readonly ticketsStore: TicketsStore = inject(TicketsStore);
-  readonly tickets: Signal<TicketInterface[]> = this.ticketsStore.selectSignal(state => state.data);
-  readonly isLoading: Signal<boolean> = this.ticketsStore.selectSignal(state => state.isLoading);
+  readonly tickets: Signal<TicketInterface[]> = this.ticketsStore.dataSelector;
+  readonly isLoading: Signal<boolean> = this.ticketsStore.isLoadingSelector;
+
+  constructor(private readonly ticketsStore: TicketsStore) { }
 
   public trackBy(index: number): number {
     return index;

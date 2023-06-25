@@ -1,0 +1,27 @@
+<div class="form-input">
+  <div class="form-input__container">
+    <div class="form-input__wrapper">
+      <input
+        #formInput
+        [type]="inputType"
+        [placeholder]="label"
+        [value]="value"
+        (input)="onChange(formInput.value)"
+        (focus)="onTouched()"
+      />
+    </div>
+    <div *ngIf="icon">
+      <img
+        alt=""
+        width="24"
+        height="24"
+        [ngSrc]="iconUrl"
+      >
+    </div>
+  </div>
+  <div class="form-input__error">
+    <div [hidden]="!areMessageShown">
+      {{errorMessage}}
+    </div>
+  </div>
+</div>

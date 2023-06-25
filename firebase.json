@@ -1,0 +1,18 @@
+{
+  "functions": {
+    "source": "dist/analog/server"
+  },
+  "hosting": [
+    {
+      "site": "tickets-ssr",
+      "public": "dist/analog/public",
+      "cleanUrls": true,
+      "rewrites": [
+        {
+          "source": "**",
+          "function": "server"
+        }
+      ]
+    }
+  ]
+}

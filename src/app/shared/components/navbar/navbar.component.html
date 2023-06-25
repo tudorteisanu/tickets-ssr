@@ -1,0 +1,27 @@
+<nav class="navbar">
+  <img
+    class="navbar__logo"
+    ngSrc="/icons/logo.svg"
+    alt="logo"
+    width="34"
+    height="30"
+    [routerLink]="homeUrl"
+  >
+  <ul class="navbar__links">
+    <li
+      *ngFor="let item of links; trackBy: trackByIndex;"
+      routerLinkActive="navbar__links--active"
+      [routerLink]="item.url"
+      [routerLinkActiveOptions]="{exact: true}"
+    >
+      {{item.text}}
+    </li>
+  </ul>
+  <div *ngIf="isLoggedIn(); else authButtons">
+    <span>{{ currentUser()?.firstName }}</span>
+    <button (click)="logout()">Logout</button>
+  </div>
+  <ng-template #authButtons>
+    <app-auth-buttons />
+  </ng-template>
+</nav>
